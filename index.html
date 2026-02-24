@@ -171,12 +171,15 @@
       <div class="hero-glow-2 absolute bottom-1/4 -right-32 w-96 h-96 bg-kiwi-600/15 rounded-full blur-3xl"></div>
       <div class="hero-glow-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-kiwi-500/5 rounded-full blur-3xl"></div>
 
+      <!-- Dot Grid Pattern -->
+      <div class="hero-dot-pattern"></div>
+
       <!-- Particle Canvas -->
       <canvas id="particles" class="absolute inset-0 pointer-events-none"></canvas>
 
       <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <!-- Badge -->
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-kiwi-500/10 border border-kiwi-500/20 text-kiwi-400 text-sm font-medium mb-8">
+        <div class="badge-shimmer inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-kiwi-500/10 border border-kiwi-500/20 text-kiwi-400 text-sm font-medium mb-8">
           <span class="w-2 h-2 bg-kiwi-400 rounded-full animate-pulse"></span>
           <span data-en="Open Source &middot; Self-Hosted &middot; Privacy-First" data-ru="Открытый код &middot; Локальный &middot; Приватный"></span>
         </div>
@@ -206,7 +209,7 @@
 
         <!-- Terminal Animation -->
         <div class="max-w-2xl mx-auto">
-          <div class="bg-dark-900 rounded-2xl border border-white/10 overflow-hidden shadow-2xl">
+          <div class="bg-dark-900 rounded-2xl border border-white/10 overflow-hidden terminal-glow">
             <!-- Terminal Header -->
             <div class="flex items-center gap-2 px-4 py-3 bg-dark-900 border-b border-white/5">
               <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
@@ -256,23 +259,27 @@
         </div>
 
         <!-- Feature Cards Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 reveal-stagger">
-          <!-- Card 1: Wake Word -->
-          <article class="group bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] hover:border-kiwi-500/30 transition-all duration-300">
-            <div class="w-12 h-12 rounded-xl bg-kiwi-500/10 flex items-center justify-center text-2xl mb-4">
-              &#x1F399;&#xFE0F;
+        <div class="bento-grid reveal-stagger">
+          <!-- Card 1: Wake Word — wide -->
+          <article class="bento-wide card-accent-kiwi group bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] hover:border-kiwi-500/30 transition-all duration-300">
+            <div class="flex items-start gap-5">
+              <div class="w-14 h-14 rounded-xl bg-kiwi-500/10 flex items-center justify-center text-3xl shrink-0">
+                &#x1F399;&#xFE0F;
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold mb-2">
+                  <span data-en="Wake Word Activation" data-ru="Активация по ключевому слову"></span>
+                </h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                  <span data-en="Responds only when you say the wake word. Customizable — use &quot;Kiwi&quot; or set your own. Always listening, ignores everything else." data-ru="Реагирует только на ключевое слово. Настраиваемое — используйте &quot;Kiwi&quot; или задайте своё. Всегда слушает, остальное игнорирует."></span>
+                </p>
+              </div>
             </div>
-            <h3 class="text-lg font-semibold mb-2">
-              <span data-en="Wake Word Activation" data-ru="Активация по ключевому слову"></span>
-            </h3>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              <span data-en="Responds only when you say the wake word. Customizable — use &quot;Kiwi&quot; or set your own. Ignores everything else." data-ru="Реагирует только на ключевое слово. Настраиваемое — используйте &quot;Kiwi&quot; или задайте своё. Остальное игнорирует."></span>
-            </p>
           </article>
 
           <!-- Card 2: Speaker ID -->
-          <article class="group bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] hover:border-kiwi-500/30 transition-all duration-300">
-            <div class="w-12 h-12 rounded-xl bg-kiwi-500/10 flex items-center justify-center text-2xl mb-4">
+          <article class="card-accent-blue group bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] hover:border-blue-400/30 transition-all duration-300">
+            <div class="w-12 h-12 rounded-xl icon-blue flex items-center justify-center text-2xl mb-4">
               &#x1F9E0;
             </div>
             <h3 class="text-lg font-semibold mb-2">
@@ -284,8 +291,8 @@
           </article>
 
           <!-- Card 3: Neural TTS -->
-          <article class="group bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] hover:border-kiwi-500/30 transition-all duration-300">
-            <div class="w-12 h-12 rounded-xl bg-kiwi-500/10 flex items-center justify-center text-2xl mb-4">
+          <article class="card-accent-purple group bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] hover:border-purple-400/30 transition-all duration-300">
+            <div class="w-12 h-12 rounded-xl icon-purple flex items-center justify-center text-2xl mb-4">
               &#x1F50A;
             </div>
             <h3 class="text-lg font-semibold mb-2">
@@ -297,8 +304,8 @@
           </article>
 
           <!-- Card 4: Privacy First -->
-          <article class="group bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] hover:border-kiwi-500/30 transition-all duration-300">
-            <div class="w-12 h-12 rounded-xl bg-kiwi-500/10 flex items-center justify-center text-2xl mb-4">
+          <article class="card-accent-cyan group bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] hover:border-cyan-400/30 transition-all duration-300">
+            <div class="w-12 h-12 rounded-xl icon-cyan flex items-center justify-center text-2xl mb-4">
               &#x1F512;
             </div>
             <h3 class="text-lg font-semibold mb-2">
@@ -310,7 +317,7 @@
           </article>
 
           <!-- Card 5: Real-time Streaming -->
-          <article class="group bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] hover:border-kiwi-500/30 transition-all duration-300">
+          <article class="card-accent-kiwi group bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] hover:border-kiwi-500/30 transition-all duration-300">
             <div class="w-12 h-12 rounded-xl bg-kiwi-500/10 flex items-center justify-center text-2xl mb-4">
               &#x26A1;
             </div>
@@ -323,8 +330,8 @@
           </article>
 
           <!-- Card 6: Voice Security -->
-          <article class="group bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] hover:border-kiwi-500/30 transition-all duration-300">
-            <div class="w-12 h-12 rounded-xl bg-kiwi-500/10 flex items-center justify-center text-2xl mb-4">
+          <article class="card-accent-blue group bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] hover:border-blue-400/30 transition-all duration-300">
+            <div class="w-12 h-12 rounded-xl icon-blue flex items-center justify-center text-2xl mb-4">
               &#x1F6E1;&#xFE0F;
             </div>
             <h3 class="text-lg font-semibold mb-2">
@@ -335,22 +342,26 @@
             </p>
           </article>
 
-          <!-- Card 7: Multi-Language -->
-          <article class="group bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] hover:border-kiwi-500/30 transition-all duration-300">
-            <div class="w-12 h-12 rounded-xl bg-kiwi-500/10 flex items-center justify-center text-2xl mb-4">
-              &#x1F30D;
+          <!-- Card 7: Multi-Language — wide -->
+          <article class="bento-wide card-accent-purple group bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] hover:border-purple-400/30 transition-all duration-300">
+            <div class="flex items-start gap-5">
+              <div class="w-14 h-14 rounded-xl icon-purple flex items-center justify-center text-3xl shrink-0">
+                &#x1F30D;
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold mb-2">
+                  <span data-en="15 Languages" data-ru="15 языков"></span>
+                </h3>
+                <p class="text-slate-400 text-sm leading-relaxed">
+                  <span data-en="YAML-based locale system. All voice commands, UI strings, hallucination filters, and security patterns are translated. Switch language with one config line." data-ru="Система локалей на YAML. Все голосовые команды, строки интерфейса, фильтры галлюцинаций и паттерны безопасности переведены. Смена языка одной строкой в конфиге."></span>
+                </p>
+              </div>
             </div>
-            <h3 class="text-lg font-semibold mb-2">
-              <span data-en="15 Languages" data-ru="15 языков"></span>
-            </h3>
-            <p class="text-slate-400 text-sm leading-relaxed">
-              <span data-en="YAML-based locale system. All voice commands, UI strings, and filters are translated. Switch language with one config line." data-ru="Система локалей на YAML. Все голосовые команды, строки интерфейса и фильтры переведены. Смена языка одной строкой в конфиге."></span>
-            </p>
           </article>
 
           <!-- Card 8: Soul System -->
-          <article class="group bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] hover:border-kiwi-500/30 transition-all duration-300">
-            <div class="w-12 h-12 rounded-xl bg-kiwi-500/10 flex items-center justify-center text-2xl mb-4">
+          <article class="card-accent-rose group bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] hover:border-rose-400/30 transition-all duration-300">
+            <div class="w-12 h-12 rounded-xl icon-rose flex items-center justify-center text-2xl mb-4">
               &#x1F3AD;
             </div>
             <h3 class="text-lg font-semibold mb-2">
@@ -362,8 +373,8 @@
           </article>
 
           <!-- Card 9: Web Dashboard -->
-          <article class="group bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] hover:border-kiwi-500/30 transition-all duration-300">
-            <div class="w-12 h-12 rounded-xl bg-kiwi-500/10 flex items-center justify-center text-2xl mb-4">
+          <article class="card-accent-amber group bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] hover:border-amber-400/30 transition-all duration-300">
+            <div class="w-12 h-12 rounded-xl icon-amber flex items-center justify-center text-2xl mb-4">
               &#x1F4CA;
             </div>
             <h3 class="text-lg font-semibold mb-2">
@@ -375,8 +386,8 @@
           </article>
 
           <!-- Card 10: Home Assistant -->
-          <article class="group bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] hover:border-kiwi-500/30 transition-all duration-300">
-            <div class="w-12 h-12 rounded-xl bg-kiwi-500/10 flex items-center justify-center text-2xl mb-4">
+          <article class="card-accent-amber group bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:bg-white/[0.08] hover:border-amber-400/30 transition-all duration-300">
+            <div class="w-12 h-12 rounded-xl icon-amber flex items-center justify-center text-2xl mb-4">
               &#x1F3E0;
             </div>
             <h3 class="text-lg font-semibold mb-2">
@@ -743,7 +754,7 @@
         <!-- Stats Cards -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-stagger">
           <!-- Stat 1 -->
-          <div class="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 text-center">
+          <div class="stat-glass text-center">
             <div class="text-4xl font-bold text-kiwi-400 mb-2 stat-number" data-value="100" data-prefix="<" data-suffix="ms">&lt;100ms</div>
             <p class="text-slate-400 text-sm">
               <span data-en="Time to first audio with Piper TTS (local, CPU)" data-ru="Время до первого аудио с Piper TTS (локально, CPU)"></span>
@@ -751,7 +762,7 @@
           </div>
 
           <!-- Stat 2 -->
-          <div class="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 text-center">
+          <div class="stat-glass text-center">
             <div class="text-4xl font-bold text-kiwi-400 mb-2">
               <span class="stat-number" data-value="15" data-suffix-en=" languages" data-suffix-ru=" языков">15</span><span data-en=" languages" data-ru=" языков"></span>
             </div>
@@ -761,7 +772,7 @@
           </div>
 
           <!-- Stat 3 -->
-          <div class="bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 text-center">
+          <div class="stat-glass text-center">
             <div class="text-4xl font-bold text-kiwi-400 mb-2">
               <span class="stat-number" data-value="3">3</span><span data-en=" seconds" data-ru=" секунды"></span>
             </div>
@@ -1004,7 +1015,7 @@
         <!-- Soul Cards Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12 reveal-stagger">
           <!-- Soul 1: Mindful Companion (default) -->
-          <div class="soul-card group relative bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:border-kiwi-500/30 transition-all duration-300">
+          <div class="soul-card soul-tint-green group relative backdrop-blur border border-white/10 rounded-2xl p-6 hover:border-kiwi-500/30 transition-all duration-300">
             <div class="flex items-center gap-3 mb-4">
               <div class="w-10 h-10 rounded-xl bg-kiwi-500/15 flex items-center justify-center text-xl">&#x1F33F;</div>
               <div>
@@ -1018,7 +1029,7 @@
           </div>
 
           <!-- Soul 2: Storyteller -->
-          <div class="soul-card group relative bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:border-blue-400/30 transition-all duration-300">
+          <div class="soul-card soul-tint-blue group relative backdrop-blur border border-white/10 rounded-2xl p-6 hover:border-blue-400/30 transition-all duration-300">
             <div class="flex items-center gap-3 mb-4">
               <div class="w-10 h-10 rounded-xl bg-blue-500/15 flex items-center justify-center text-xl">&#x1F4D6;</div>
               <div>
@@ -1031,7 +1042,7 @@
           </div>
 
           <!-- Soul 3: Comedian -->
-          <div class="soul-card group relative bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:border-yellow-400/30 transition-all duration-300">
+          <div class="soul-card soul-tint-yellow group relative backdrop-blur border border-white/10 rounded-2xl p-6 hover:border-yellow-400/30 transition-all duration-300">
             <div class="flex items-center gap-3 mb-4">
               <div class="w-10 h-10 rounded-xl bg-yellow-500/15 flex items-center justify-center text-xl">&#x1F3A4;</div>
               <div>
@@ -1044,7 +1055,7 @@
           </div>
 
           <!-- Soul 4: Hype Person -->
-          <div class="soul-card group relative bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:border-orange-400/30 transition-all duration-300">
+          <div class="soul-card soul-tint-orange group relative backdrop-blur border border-white/10 rounded-2xl p-6 hover:border-orange-400/30 transition-all duration-300">
             <div class="flex items-center gap-3 mb-4">
               <div class="w-10 h-10 rounded-xl bg-orange-500/15 flex items-center justify-center text-xl">&#x1F525;</div>
               <div>
@@ -1057,7 +1068,7 @@
           </div>
 
           <!-- Soul 5: Siren (NSFW) -->
-          <div class="soul-card group relative bg-white/5 backdrop-blur border border-white/10 rounded-2xl p-6 hover:border-rose-500/30 transition-all duration-300">
+          <div class="soul-card soul-tint-rose group relative backdrop-blur border border-white/10 rounded-2xl p-6 hover:border-rose-500/30 transition-all duration-300">
             <div class="flex items-center gap-3 mb-4">
               <div class="w-10 h-10 rounded-xl bg-rose-500/15 flex items-center justify-center text-xs font-bold text-rose-400">18+</div>
               <div>
@@ -1459,7 +1470,7 @@
                     <i class="fa-solid fa-house-signal text-kiwi-400 text-xs"></i>
                   </div>
                   <span class="text-sm font-medium" data-en="Voice Control" data-ru="Голосовое управление"></span>
-                  <span class="text-[10px] font-bold uppercase tracking-wider text-kiwi-400 bg-kiwi-500/10 px-2 py-0.5 rounded-full">new</span>
+                  <span class="badge-pulse text-[10px] font-bold uppercase tracking-wider text-kiwi-400 bg-kiwi-500/10 px-2 py-0.5 rounded-full">new</span>
                 </div>
                 <div class="text-xs text-slate-400 bg-white/[0.03] rounded-lg px-3 py-2 mb-2">
                   <span data-en="Say &quot;Kiwi, turn on the lights&quot; — command goes to HA Conversation API and the response is spoken back" data-ru="Скажи &laquo;Киви, включи свет&raquo; — команда уходит в HA Conversation API, ответ озвучивается"></span>
@@ -1560,7 +1571,7 @@ homeassistant:
         </div>
 
         <!-- Steps -->
-        <div class="space-y-8 reveal">
+        <div class="qs-timeline space-y-8 reveal">
           <!-- Step 1 -->
           <div class="flex gap-4 sm:gap-6">
             <div class="flex-shrink-0">

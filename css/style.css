@@ -1233,9 +1233,9 @@ section + section::before {
   content: '';
   display: block;
   height: 1px;
-  max-width: 200px;
+  max-width: 400px;
   margin: 0 auto;
-  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.15), transparent);
+  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.25), transparent);
 }
 
 /* ----- 39. Feature Card Icon Pulse on Hover ----- */
@@ -1328,4 +1328,232 @@ pre:hover::after {
 
 [data-theme="light"] .stat-number {
   text-shadow: 0 0 40px rgba(16, 185, 129, 0.1);
+}
+
+/* ============================================
+   VISUAL UPGRADE — Bento, Atmosphere, Depth
+   ============================================ */
+
+/* ----- 45. Hero Dot Pattern ----- */
+
+.hero-dot-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(16, 185, 129, 0.07) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(ellipse 70% 50% at 50% 50%, black 30%, transparent 70%);
+  mask-image: radial-gradient(ellipse 70% 50% at 50% 50%, black 30%, transparent 70%);
+}
+
+[data-theme="light"] .hero-dot-pattern {
+  background-image: radial-gradient(rgba(16, 185, 129, 0.1) 1px, transparent 1px);
+}
+
+@media (max-width: 640px) {
+  .hero-dot-pattern { display: none; }
+}
+
+/* ----- 46. Terminal Glow ----- */
+
+.terminal-glow {
+  box-shadow:
+    0 0 80px rgba(16, 185, 129, 0.06),
+    0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="light"] .terminal-glow {
+  box-shadow:
+    0 0 60px rgba(16, 185, 129, 0.08),
+    0 25px 50px rgba(0, 0, 0, 0.12);
+}
+
+/* ----- 47. Badge Shimmer ----- */
+
+@keyframes shimmer {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+.badge-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.badge-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 30%, rgba(255, 255, 255, 0.06) 50%, transparent 70%);
+  background-size: 200% 100%;
+  animation: shimmer 4s ease-in-out infinite;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* ----- 48. Bento Feature Grid ----- */
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.bento-wide {
+  grid-column: span 2;
+}
+
+@media (max-width: 1024px) {
+  .bento-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .bento-grid { grid-template-columns: 1fr; }
+  .bento-wide { grid-column: span 1; }
+}
+
+/* Card accent top-border */
+.card-accent-kiwi   { border-top: 2px solid rgba(16, 185, 129, 0.5); }
+.card-accent-blue    { border-top: 2px solid rgba(59, 130, 246, 0.4); }
+.card-accent-purple  { border-top: 2px solid rgba(139, 92, 246, 0.4); }
+.card-accent-amber   { border-top: 2px solid rgba(245, 158, 11, 0.4); }
+.card-accent-cyan    { border-top: 2px solid rgba(6, 182, 212, 0.4); }
+.card-accent-rose    { border-top: 2px solid rgba(244, 63, 94, 0.4); }
+
+.card-accent-kiwi:hover   { border-top-color: rgba(16, 185, 129, 0.8); }
+.card-accent-blue:hover    { border-top-color: rgba(59, 130, 246, 0.7); }
+.card-accent-purple:hover  { border-top-color: rgba(139, 92, 246, 0.7); }
+.card-accent-amber:hover   { border-top-color: rgba(245, 158, 11, 0.7); }
+.card-accent-cyan:hover    { border-top-color: rgba(6, 182, 212, 0.7); }
+.card-accent-rose:hover    { border-top-color: rgba(244, 63, 94, 0.7); }
+
+/* Card icon background variants */
+.icon-blue   { background: rgba(59, 130, 246, 0.1) !important; }
+.icon-purple { background: rgba(139, 92, 246, 0.1) !important; }
+.icon-amber  { background: rgba(245, 158, 11, 0.1) !important; }
+.icon-cyan   { background: rgba(6, 182, 212, 0.1) !important; }
+.icon-rose   { background: rgba(244, 63, 94, 0.1) !important; }
+
+/* Bento card hover */
+.bento-grid article {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bento-grid article:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ----- 49. Stat Glass Cards ----- */
+
+.stat-glass {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.stat-glass:hover {
+  border-color: rgba(16, 185, 129, 0.2);
+  transform: translateY(-2px);
+}
+
+.stat-glass::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.3), transparent);
+}
+
+[data-theme="light"] .stat-glass {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(0, 0, 0, 0.06);
+}
+
+/* ----- 50. Soul Card Gradient Tints ----- */
+
+.soul-tint-green  { background: linear-gradient(135deg, rgba(16, 185, 129, 0.06), rgba(255, 255, 255, 0.03)) !important; }
+.soul-tint-blue   { background: linear-gradient(135deg, rgba(96, 165, 250, 0.05), rgba(255, 255, 255, 0.03)) !important; }
+.soul-tint-yellow { background: linear-gradient(135deg, rgba(251, 191, 36, 0.04), rgba(255, 255, 255, 0.03)) !important; }
+.soul-tint-orange { background: linear-gradient(135deg, rgba(249, 115, 22, 0.04), rgba(255, 255, 255, 0.03)) !important; }
+.soul-tint-rose   { background: linear-gradient(135deg, rgba(244, 63, 94, 0.05), rgba(255, 255, 255, 0.03)) !important; }
+
+[data-theme="light"] .soul-tint-green  { background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(255, 255, 255, 0.7)) !important; }
+[data-theme="light"] .soul-tint-blue   { background: linear-gradient(135deg, rgba(96, 165, 250, 0.07), rgba(255, 255, 255, 0.7)) !important; }
+[data-theme="light"] .soul-tint-yellow { background: linear-gradient(135deg, rgba(251, 191, 36, 0.06), rgba(255, 255, 255, 0.7)) !important; }
+[data-theme="light"] .soul-tint-orange { background: linear-gradient(135deg, rgba(249, 115, 22, 0.06), rgba(255, 255, 255, 0.7)) !important; }
+[data-theme="light"] .soul-tint-rose   { background: linear-gradient(135deg, rgba(244, 63, 94, 0.07), rgba(255, 255, 255, 0.7)) !important; }
+
+/* ----- 51. NEW Badge Pulse ----- */
+
+@keyframes badge-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.badge-pulse {
+  animation: badge-pulse 2s ease-in-out infinite;
+}
+
+/* ----- 52. FAQ Polish ----- */
+
+.faq-item {
+  border-left: 2px solid transparent;
+}
+
+.faq-item.open {
+  border-left-color: #10b981;
+}
+
+/* ----- 53. Quick Start Timeline ----- */
+
+.qs-timeline {
+  position: relative;
+}
+
+.qs-timeline::before {
+  content: '';
+  position: absolute;
+  left: 19px;
+  top: 28px;
+  bottom: 28px;
+  width: 2px;
+  background: linear-gradient(180deg, #10b981, #059669 60%, rgba(5, 150, 105, 0.15));
+  border-radius: 1px;
+}
+
+@media (min-width: 640px) {
+  .qs-timeline::before { left: 23px; }
+}
+
+/* ----- 54. Enhanced Language Badges ----- */
+
+.lang-badge:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 32px rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+/* ----- 55. Section Angle Divider ----- */
+
+.section-angle {
+  height: 48px;
+  position: relative;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.section-angle svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
