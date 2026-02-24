@@ -12,7 +12,12 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  scroll-padding-top: calc(5rem + env(safe-area-inset-top, 0px));
+}
+
+/* Safe area for notch/Dynamic Island devices */
+nav#navbar {
+  padding-top: env(safe-area-inset-top, 0px);
 }
 
 body {
@@ -469,6 +474,7 @@ body {
 .mobile-menu {
   position: fixed;
   inset: 0;
+  padding-top: env(safe-area-inset-top, 0px);
   background: rgba(10, 15, 26, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
