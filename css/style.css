@@ -1,0 +1,1331 @@
+/* ============================================
+   Kiwi Voice - Custom Styles
+   ============================================ */
+
+/* ----- 1. Base Styles ----- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  font-family: 'Onest', system-ui, sans-serif;
+  background-color: #0a0f1a;
+  color: #f8fafc;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #10b98140;
+  color: #fff;
+}
+
+/* ----- 2. Custom Scrollbar ----- */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #10b981;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #34d399;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #10b981 #0f172a;
+}
+
+/* ----- 3. Hero Section Animated Glows ----- */
+
+.hero-glow-1 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  top: -200px;
+  right: -100px;
+  animation: float-1 20s ease-in-out infinite;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.hero-glow-2 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(52, 211, 153, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  bottom: -150px;
+  left: -100px;
+  animation: float-2 25s ease-in-out infinite;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.hero-glow-3 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(6, 95, 70, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: float-3 18s ease-in-out infinite;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* ----- 4. Float Animations ----- */
+
+@keyframes float-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 30px) scale(0.9); }
+}
+
+@keyframes float-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(-40px, -30px) scale(1.05); }
+  50% { transform: translate(20px, -60px) scale(0.95); }
+  75% { transform: translate(40px, 20px) scale(1.08); }
+}
+
+@keyframes float-3 {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  33% { transform: translate(-45%, -55%) scale(1.15); }
+  66% { transform: translate(-55%, -45%) scale(0.85); }
+}
+
+/* ----- 5. Terminal Animation ----- */
+
+.terminal {
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  overflow: hidden;
+  max-width: 600px;
+  width: 100%;
+}
+
+.terminal-header {
+  background: #1e293b;
+  padding: 12px 16px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.terminal-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.terminal-dot.red { background: #ef4444; }
+.terminal-dot.yellow { background: #eab308; }
+.terminal-dot.green { background: #22c55e; }
+
+.terminal-body {
+  padding: 20px;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.terminal-line {
+  opacity: 0;
+  animation: terminal-appear 0.5s forwards;
+}
+
+.terminal-line:nth-child(1) { animation-delay: 0.5s; }
+.terminal-line:nth-child(2) { animation-delay: 1.5s; }
+.terminal-line:nth-child(3) { animation-delay: 2.5s; }
+.terminal-line:nth-child(4) { animation-delay: 3.5s; }
+.terminal-line:nth-child(5) { animation-delay: 4.5s; }
+.terminal-line:nth-child(6) { animation-delay: 5.5s; }
+
+@keyframes terminal-appear {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 18px;
+  background: #10b981;
+  animation: blink 1s infinite;
+  vertical-align: text-bottom;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ----- 6. Glassmorphism Card Styles ----- */
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(16, 185, 129, 0.3);
+  transform: translateY(-4px);
+}
+
+/* ----- 7. Feature Card Icon Styles ----- */
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(52, 211, 153, 0.1));
+  border-radius: 12px;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+/* ----- 8. Scroll Reveal Animation ----- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-stagger.active > *:nth-child(1) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.active > *:nth-child(2) { transition-delay: 0.15s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.active > *:nth-child(3) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.active > *:nth-child(4) { transition-delay: 0.25s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.active > *:nth-child(5) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.active > *:nth-child(6) { transition-delay: 0.35s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.active > *:nth-child(7) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.active > *:nth-child(8) { transition-delay: 0.45s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.active > *:nth-child(9) { transition-delay: 0.5s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.active > *:nth-child(10) { transition-delay: 0.55s; opacity: 1; transform: translateY(0); }
+.reveal-stagger.active > *:nth-child(n+11) { transition-delay: 0.6s; opacity: 1; transform: translateY(0); }
+
+/* ----- 9. Pipeline / Architecture Flow ----- */
+
+.pipeline {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  padding: 20px 0;
+}
+
+.pipeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100px;
+  text-align: center;
+  position: relative;
+}
+
+.pipeline-step-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.pipeline-arrow {
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, #10b981, #34d399);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.pipeline-arrow::after {
+  content: '';
+  position: absolute;
+  right: -4px;
+  top: -4px;
+  border: solid #34d399;
+  border-width: 0 2px 2px 0;
+  padding: 4px;
+  transform: rotate(-45deg);
+}
+
+/* ----- 10. Comparison Section Styles ----- */
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.comparison-card.negative {
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.comparison-card.negative:hover {
+  border-color: rgba(239, 68, 68, 0.4);
+}
+
+.comparison-card.positive {
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.comparison-card.positive:hover {
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+/* ----- 11. Table Styles ----- */
+
+.tts-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tts-table thead th {
+  background: #1e293b;
+  padding: 16px 20px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tts-table tbody td {
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 15px;
+}
+
+.tts-table tbody tr {
+  transition: background 0.2s;
+}
+
+.tts-table tbody tr:hover {
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.tts-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.tts-table tbody tr.recommended {
+  background: rgba(16, 185, 129, 0.08);
+}
+
+/* ----- 12. Code Block Styles ----- */
+
+.code-block {
+  background: #0a0f1a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-x: auto;
+  position: relative;
+}
+
+.code-block .comment { color: #6b7280; }
+.code-block .command { color: #34d399; }
+.code-block .flag { color: #60a5fa; }
+
+/* ----- 13. Stat Cards ----- */
+
+.stat-card {
+  text-align: center;
+  padding: 32px;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #10b981, #34d399);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+/* ----- 14. Navigation Active States ----- */
+
+.nav-link {
+  position: relative;
+  color: #94a3b8;
+  transition: color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #f8fafc;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #10b981;
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* ----- 14b. Navigation Scrolled State ----- */
+
+.nav-scrolled {
+  background: rgba(15, 23, 42, 0.97) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* ----- 15. Language Toggle ----- */
+
+.lang-toggle {
+  display: flex;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lang-btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+  background: transparent;
+}
+
+.lang-btn.active {
+  background: #10b981;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+/* ----- 16. Mobile Menu ----- */
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 15, 26, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.mobile-menu.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-menu a {
+  font-size: 24px;
+  font-weight: 600;
+  color: #f8fafc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.mobile-menu a:hover {
+  color: #10b981;
+}
+
+/* ----- 17. Button Styles ----- */
+
+.btn-primary {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #f8fafc;
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  border-color: #10b981;
+  color: #10b981;
+  transform: translateY(-2px);
+}
+
+/* ----- 18. Quick Start Steps ----- */
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.step-connector {
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(180deg, #10b981, transparent);
+  margin-left: 19px;
+}
+
+/* ----- 19. Gradient Text Utility ----- */
+
+.gradient-text {
+  background: linear-gradient(135deg, #10b981, #34d399, #6ee7b7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ----- 20. Pulse Glow Animation ----- */
+
+.pulse-glow {
+  position: relative;
+}
+
+.pulse-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 40px rgba(16, 185, 129, 0.4);
+  animation: pulse-glow 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* ----- 21. Section Styling ----- */
+
+section {
+  position: relative;
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.3), transparent);
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+/* ----- 22. Responsive Overrides ----- */
+
+/* Tablet - 1024px */
+@media (max-width: 1024px) {
+  .stat-number {
+    font-size: 2.5rem;
+  }
+
+  .terminal {
+    max-width: 500px;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+}
+
+/* Small Tablet - 768px */
+@media (max-width: 768px) {
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pipeline {
+    flex-direction: column;
+  }
+
+  .pipeline-arrow {
+    width: 2px;
+    height: 30px;
+    background: linear-gradient(180deg, #10b981, #34d399);
+  }
+
+  .pipeline-arrow::after {
+    right: -4px;
+    top: auto;
+    bottom: -4px;
+    transform: rotate(45deg);
+  }
+
+  .stat-number {
+    font-size: 2.25rem;
+  }
+
+  .stat-card {
+    padding: 24px 16px;
+  }
+
+  .tts-table thead th {
+    padding: 12px 14px;
+    font-size: 12px;
+  }
+
+  .tts-table tbody td {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+
+  .code-block {
+    padding: 16px;
+    font-size: 13px;
+  }
+
+  .terminal-body {
+    padding: 16px;
+    font-size: 13px;
+  }
+
+  .hero-glow-1 {
+    width: 350px;
+    height: 350px;
+  }
+
+  .hero-glow-2 {
+    width: 300px;
+    height: 300px;
+  }
+
+  .hero-glow-3 {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+/* Mobile - 640px */
+@media (max-width: 640px) {
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    padding: 12px 20px;
+    font-size: 14px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .terminal {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  .terminal-body {
+    padding: 12px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .glass-card {
+    border-radius: 12px;
+  }
+
+  .glass-card:hover {
+    transform: none;
+  }
+
+  .feature-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .pipeline-step {
+    min-width: 80px;
+  }
+
+  .pipeline-step-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+    border-radius: 12px;
+  }
+
+  .step-number {
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+  }
+
+  .step-connector {
+    margin-left: 15px;
+    height: 32px;
+  }
+
+  .code-block {
+    padding: 12px;
+    font-size: 12px;
+    border-radius: 8px;
+  }
+
+  .hero-glow-1,
+  .hero-glow-2,
+  .hero-glow-3 {
+    display: none;
+  }
+}
+
+/* ============================================
+   NEW FEATURES
+   ============================================ */
+
+/* ----- 23. Scroll Progress Bar ----- */
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #10b981, #34d399);
+  z-index: 9998;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+}
+
+/* ----- 25. Back to Top Button ----- */
+
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #10b981;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  transition: all 0.3s ease;
+  z-index: 40;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: rgba(16, 185, 129, 0.25);
+  border-color: rgba(16, 185, 129, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.2);
+}
+
+/* ----- 26. FAQ Accordion ----- */
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 0.3s, background 0.3s;
+}
+
+.faq-item:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.faq-item.open {
+  border-color: rgba(16, 185, 129, 0.2);
+  background: rgba(16, 185, 129, 0.03);
+}
+
+.faq-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font-family: inherit;
+}
+
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.faq-item.open .faq-content {
+  max-height: 300px;
+}
+
+.faq-item.open .faq-chevron {
+  transform: rotate(180deg);
+}
+
+/* ----- 27. Light Theme ----- */
+
+[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-surface: #e2e8f0;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] body,
+[data-theme="light"].scroll-smooth {
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+}
+
+[data-theme="light"] body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] nav#navbar {
+  background: rgba(248, 250, 252, 0.85) !important;
+  border-bottom-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+[data-theme="light"] .nav-scrolled {
+  background: rgba(248, 250, 252, 0.95) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] .nav-link {
+  color: #64748b;
+}
+
+[data-theme="light"] .nav-link:hover,
+[data-theme="light"] .nav-link.active {
+  color: #0f172a;
+}
+
+[data-theme="light"] .mobile-menu {
+  background: rgba(248, 250, 252, 0.97);
+}
+
+[data-theme="light"] .mobile-menu a {
+  color: #0f172a;
+}
+
+[data-theme="light"] .lang-toggle {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .lang-btn {
+  color: #64748b;
+}
+
+[data-theme="light"] .lang-btn.active {
+  background: #10b981;
+  color: #fff;
+}
+
+/* Hero */
+[data-theme="light"] section#hero {
+  background: linear-gradient(180deg, #f8fafc 0%, #ecfdf5 100%);
+}
+
+[data-theme="light"] .hero-glow-1,
+[data-theme="light"] .hero-glow-2,
+[data-theme="light"] .hero-glow-3 {
+  opacity: 0.4;
+}
+
+/* Cards and surfaces */
+[data-theme="light"] article,
+[data-theme="light"] .bg-white\/5,
+[data-theme="light"] [class*="bg-white/5"],
+[data-theme="light"] .faq-item {
+  background: rgba(255, 255, 255, 0.7) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] article:hover {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+}
+
+/* Section backgrounds */
+[data-theme="light"] .bg-dark-900\/50,
+[data-theme="light"] [class*="bg-dark-900/50"] {
+  background: rgba(241, 245, 249, 0.7) !important;
+}
+
+/* Text colors */
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] .text-slate-200,
+[data-theme="light"] .text-slate-300,
+[data-theme="light"] .text-white {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .text-slate-400,
+[data-theme="light"] .text-slate-500 {
+  color: #64748b !important;
+}
+
+[data-theme="light"] p,
+[data-theme="light"] span:not(.text-kiwi-400):not(.text-kiwi-300):not(.text-red-400):not(.text-yellow-400):not(.text-blue-400):not([class*="text-kiwi"]) {
+  color: #334155;
+}
+
+/* Terminal */
+[data-theme="light"] #terminal-content,
+[data-theme="light"] .bg-dark-900 {
+  background: #1e293b !important;
+}
+
+/* Code blocks stay dark */
+[data-theme="light"] pre {
+  background: #1e293b !important;
+}
+
+[data-theme="light"] pre code,
+[data-theme="light"] pre .text-slate-300 {
+  color: #e2e8f0 !important;
+}
+
+/* Footer */
+[data-theme="light"] footer {
+  background: #f1f5f9 !important;
+  border-top-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Scroll progress */
+[data-theme="light"] .scroll-progress {
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.2);
+}
+
+/* Back to top */
+[data-theme="light"] .back-to-top {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+/* Table */
+[data-theme="light"] table thead tr {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] table tbody tr {
+  border-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-theme="light"] table tbody tr:hover {
+  background: rgba(16, 185, 129, 0.05) !important;
+}
+
+/* Comparison section */
+[data-theme="light"] .border-kiwi-500\/20 {
+  border-color: rgba(16, 185, 129, 0.25) !important;
+}
+
+/* Responsive overrides for back-to-top */
+@media (max-width: 640px) {
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ============================================
+   SOUL SYSTEM, LANGUAGES, DASHBOARD, HA
+   ============================================ */
+
+/* ----- 28. Soul Cards ----- */
+
+.soul-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.soul-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.3), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.soul-card:hover::before {
+  opacity: 1;
+}
+
+/* ----- 29. Language Badges ----- */
+
+.lang-badge {
+  transition: transform 0.2s ease, border-color 0.3s ease;
+}
+
+.lang-badge:hover {
+  transform: translateY(-2px);
+}
+
+/* ----- 30. Light Theme — new sections ----- */
+
+[data-theme="light"] .soul-card,
+[data-theme="light"] .lang-badge {
+  background: rgba(255, 255, 255, 0.7) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] .soul-card:hover {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-theme="light"] #souls,
+[data-theme="light"] #dashboard {
+  background: rgba(241, 245, 249, 0.7);
+}
+
+[data-theme="light"] #home-assistant .bg-white\/5,
+[data-theme="light"] #home-assistant [class*="bg-white/5"] {
+  background: rgba(255, 255, 255, 0.7) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ============================================
+   DESIGN UPGRADE — Typography, Grain, Effects
+   ============================================ */
+
+/* ----- 31. Display Typography ----- */
+
+h1, h2 {
+  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  letter-spacing: -0.035em;
+}
+
+h3 {
+  letter-spacing: -0.01em;
+}
+
+/* ----- 32. Film Grain Overlay ----- */
+
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+[data-theme="light"] .grain-overlay {
+  opacity: 0.015;
+  mix-blend-mode: multiply;
+}
+
+/* ----- 33. Soul Card Unique Accent Bars ----- */
+
+.soul-card::before {
+  opacity: 0.5;
+}
+
+.soul-card:hover::before {
+  opacity: 1;
+}
+
+.soul-card:nth-child(1)::before {
+  background: linear-gradient(90deg, transparent, #10b981, transparent);
+}
+
+.soul-card:nth-child(2)::before {
+  background: linear-gradient(90deg, transparent, #60a5fa, transparent);
+}
+
+.soul-card:nth-child(3)::before {
+  background: linear-gradient(90deg, transparent, #fbbf24, transparent);
+}
+
+.soul-card:nth-child(4)::before {
+  background: linear-gradient(90deg, transparent, #f97316, transparent);
+}
+
+.soul-card:nth-child(5)::before {
+  background: linear-gradient(90deg, transparent, #f43f5e, transparent);
+}
+
+.soul-card:nth-child(6)::before {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+}
+
+/* ----- 34. Soul Card Hover Glow ----- */
+
+.soul-card:nth-child(1):hover {
+  box-shadow: 0 8px 40px rgba(16, 185, 129, 0.1);
+}
+
+.soul-card:nth-child(2):hover {
+  box-shadow: 0 8px 40px rgba(96, 165, 250, 0.1);
+}
+
+.soul-card:nth-child(3):hover {
+  box-shadow: 0 8px 40px rgba(251, 191, 36, 0.08);
+}
+
+.soul-card:nth-child(4):hover {
+  box-shadow: 0 8px 40px rgba(249, 115, 22, 0.08);
+}
+
+.soul-card:nth-child(5):hover {
+  box-shadow: 0 8px 40px rgba(244, 63, 94, 0.1);
+}
+
+/* ----- 35. Language Badge Enhanced Hover ----- */
+
+.lang-badge:hover {
+  box-shadow: 0 4px 24px rgba(16, 185, 129, 0.08);
+}
+
+/* ----- 36. NSFW Callout Animated Border ----- */
+
+#souls .bg-rose-500\/5 {
+  position: relative;
+}
+
+#souls .bg-rose-500\/5::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(244, 63, 94, 0.2), transparent 50%, rgba(244, 63, 94, 0.1));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ----- 37. Stat Number Glow ----- */
+
+.stat-number {
+  text-shadow: 0 0 40px rgba(16, 185, 129, 0.15);
+}
+
+/* ----- 38. Enhanced Section Divider ----- */
+
+section + section::before {
+  content: '';
+  display: block;
+  height: 1px;
+  max-width: 200px;
+  margin: 0 auto;
+  background: linear-gradient(90deg, transparent, rgba(16, 185, 129, 0.15), transparent);
+}
+
+/* ----- 39. Feature Card Icon Pulse on Hover ----- */
+
+#features article:hover .w-12 {
+  animation: icon-breathe 1.5s ease-in-out infinite;
+}
+
+@keyframes icon-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+/* ----- 40. Dashboard API Endpoint Row Hover ----- */
+
+#dashboard .font-mono.text-sm div[class] {
+  transition: background 0.15s ease;
+  border-radius: 4px;
+}
+
+/* ----- 41. HA Section Entity Card Border Accents ----- */
+
+#home-assistant .bg-blue-500\/15,
+#home-assistant [class*="bg-blue-500"] {
+  box-shadow: inset 0 0 0 1px rgba(96, 165, 250, 0.08);
+}
+
+#home-assistant .bg-kiwi-500\/15,
+#home-assistant [class*="bg-kiwi-500/15"] {
+  box-shadow: inset 0 0 0 1px rgba(16, 185, 129, 0.08);
+}
+
+#home-assistant .bg-orange-500\/15,
+#home-assistant [class*="bg-orange-500/15"] {
+  box-shadow: inset 0 0 0 1px rgba(249, 115, 22, 0.08);
+}
+
+#home-assistant .bg-purple-500\/15,
+#home-assistant [class*="bg-purple-500/15"] {
+  box-shadow: inset 0 0 0 1px rgba(168, 85, 247, 0.08);
+}
+
+/* ----- 42. Smooth Gradient Background for Sections ----- */
+
+#souls {
+  background: linear-gradient(180deg, rgba(10, 15, 26, 0.5) 0%, rgba(15, 10, 25, 0.5) 100%);
+}
+
+#dashboard {
+  background: linear-gradient(180deg, rgba(10, 15, 26, 0.5) 0%, rgba(10, 18, 26, 0.5) 100%);
+}
+
+[data-theme="light"] #souls {
+  background: linear-gradient(180deg, rgba(241, 245, 249, 0.7) 0%, rgba(245, 243, 255, 0.5) 100%);
+}
+
+[data-theme="light"] #dashboard {
+  background: linear-gradient(180deg, rgba(241, 245, 249, 0.7) 0%, rgba(236, 253, 245, 0.4) 100%);
+}
+
+/* ----- 43. Code Block Enhanced Styling ----- */
+
+pre {
+  position: relative;
+}
+
+pre::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(10, 15, 26, 0.8));
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+pre:hover::after {
+  opacity: 0;
+}
+
+/* ----- 44. Light Theme — grain and typography ----- */
+
+[data-theme="light"] h1,
+[data-theme="light"] h2 {
+  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+}
+
+[data-theme="light"] .stat-number {
+  text-shadow: 0 0 40px rgba(16, 185, 129, 0.1);
+}
