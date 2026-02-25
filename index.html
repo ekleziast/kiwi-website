@@ -338,7 +338,7 @@
               <span data-en="Voice Security" data-ru="Голосовая безопасность"></span>
             </h3>
             <p class="text-slate-400 text-sm leading-relaxed">
-              <span data-en="Detects dangerous commands and routes them through Telegram approval. Device identity signed with Ed25519." data-ru="Обнаруживает опасные команды и отправляет на подтверждение в Telegram. Подпись устройства через Ed25519."></span>
+              <span data-en="Two-layer protection: Kiwi catches dangerous commands before they reach the LLM, and OpenClaw&apos;s exec approval blocks unsafe shell execution after. Owner approves by voice or Telegram." data-ru="Двухуровневая защита: Kiwi перехватывает опасные команды до отправки в LLM, а exec approval OpenClaw блокирует опасное выполнение команд после. Владелец подтверждает голосом или через Telegram."></span>
             </p>
           </article>
 
@@ -545,7 +545,7 @@
                 <i class="fa-solid fa-shield-halved text-kiwi-400 text-sm mt-0.5 shrink-0"></i>
                 <div>
                   <div class="text-sm font-medium text-slate-200" data-en="Voice-gated security" data-ru="Голосовой контроль доступа"></div>
-                  <div class="text-xs text-slate-500 mt-0.5" data-en="Dangerous commands → Telegram approval, Ed25519 signing" data-ru="Опасные команды → подтверждение в Telegram, подпись Ed25519"></div>
+                  <div class="text-xs text-slate-500 mt-0.5" data-en="Pre-filter (regex) + post-filter (OpenClaw exec approval) → voice/Telegram confirmation" data-ru="Пре-фильтр (regex) + пост-фильтр (OpenClaw exec approval) → голосовое/Telegram подтверждение"></div>
                 </div>
               </div>
               <!-- Layer 5 -->
@@ -1792,6 +1792,10 @@ pip install -r requirements.txt</code></pre>
               <span class="inline-flex items-center gap-1.5 text-xs sm:text-sm text-slate-400 bg-white/5 border border-white/10 rounded-lg px-3 py-1.5">
                 <i class="fa-solid fa-check text-kiwi-500/70 text-[10px]"></i>
                 <span data-en="MLX Whisper (Apple Silicon)" data-ru="MLX Whisper (Apple Silicon)"></span>
+              </span>
+              <span class="inline-flex items-center gap-1.5 text-xs sm:text-sm text-slate-400 bg-white/5 border border-white/10 rounded-lg px-3 py-1.5">
+                <i class="fa-solid fa-check text-kiwi-500/70 text-[10px]"></i>
+                <span data-en="OpenClaw exec approval (two-layer security)" data-ru="OpenClaw exec approval (двухуровневая защита)"></span>
               </span>
             </div>
           </div>
