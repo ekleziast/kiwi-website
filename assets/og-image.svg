@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0f1a"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="40%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Glow effect -->
+  <ellipse cx="600" cy="280" rx="500" ry="300" fill="url(#glow)"/>
+
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="1200" height="3" fill="url(#accent)"/>
+
+  <!-- Kiwi emoji -->
+  <text x="600" y="200" text-anchor="middle" font-size="100" fill="white">&#x1F95D;</text>
+
+  <!-- Title -->
+  <text x="600" y="310" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="white">Kiwi Voice</text>
+
+  <!-- Subtitle -->
+  <text x="600" y="380" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="400" fill="#94a3b8">Open-Source Voice Interface for AI Agents</text>
+
+  <!-- Sound waveform -->
+  <g fill="#10b981" opacity="0.6">
+    <rect x="380" y="454" width="4" height="8" rx="2"/>
+    <rect x="396" y="450" width="4" height="16" rx="2"/>
+    <rect x="412" y="452" width="4" height="12" rx="2"/>
+    <rect x="428" y="446" width="4" height="24" rx="2"/>
+    <rect x="444" y="448" width="4" height="20" rx="2"/>
+    <rect x="460" y="442" width="4" height="32" rx="2"/>
+    <rect x="476" y="445" width="4" height="26" rx="2"/>
+    <rect x="492" y="438" width="4" height="40" rx="2"/>
+    <rect x="508" y="441" width="4" height="34" rx="2"/>
+    <rect x="524" y="435" width="4" height="46" rx="2"/>
+    <rect x="540" y="438" width="4" height="40" rx="2"/>
+    <rect x="556" y="432" width="4" height="52" rx="2"/>
+    <rect x="572" y="435" width="4" height="46" rx="2"/>
+    <rect x="588" y="429" width="5" height="58" rx="2.5" fill="#34d399"/>
+    <rect x="605" y="427" width="5" height="62" rx="2.5" fill="#34d399"/>
+    <rect x="622" y="429" width="5" height="58" rx="2.5" fill="#34d399"/>
+    <rect x="638" y="435" width="4" height="46" rx="2"/>
+    <rect x="654" y="432" width="4" height="52" rx="2"/>
+    <rect x="670" y="438" width="4" height="40" rx="2"/>
+    <rect x="686" y="435" width="4" height="46" rx="2"/>
+    <rect x="702" y="441" width="4" height="34" rx="2"/>
+    <rect x="718" y="438" width="4" height="40" rx="2"/>
+    <rect x="734" y="445" width="4" height="26" rx="2"/>
+    <rect x="750" y="442" width="4" height="32" rx="2"/>
+    <rect x="766" y="448" width="4" height="20" rx="2"/>
+    <rect x="782" y="446" width="4" height="24" rx="2"/>
+    <rect x="798" y="452" width="4" height="12" rx="2"/>
+    <rect x="814" y="450" width="4" height="16" rx="2"/>
+    <rect x="830" y="454" width="4" height="8" rx="2"/>
+  </g>
+
+  <!-- Platform badges -->
+  <g font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="500">
+    <rect x="370" y="525" width="90" height="30" rx="15" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="415" y="545" text-anchor="middle" fill="#34d399">Linux</text>
+
+    <rect x="555" y="525" width="90" height="30" rx="15" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="600" y="545" text-anchor="middle" fill="#34d399">macOS</text>
+
+    <rect x="740" y="525" width="100" height="30" rx="15" fill="#10b981" fill-opacity="0.12" stroke="#10b981" stroke-opacity="0.3" stroke-width="1"/>
+    <text x="790" y="545" text-anchor="middle" fill="#34d399">Windows</text>
+  </g>
+
+  <!-- URL -->
+  <text x="600" y="600" text-anchor="middle" font-family="monospace" font-size="18" fill="#64748b">kiwi-voice.com</text>
+
+  <!-- Bottom accent line -->
+  <rect x="0" y="627" width="1200" height="3" fill="url(#accent)"/>
+</svg>
