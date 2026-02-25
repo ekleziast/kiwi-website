@@ -271,7 +271,7 @@
                   <span data-en="Wake Word Activation" data-ru="Активация по ключевому слову"></span>
                 </h3>
                 <p class="text-slate-400 text-sm leading-relaxed">
-                  <span data-en="Responds only when you say the wake word. Customizable — use &quot;Kiwi&quot; or set your own. Always listening, ignores everything else." data-ru="Реагирует только на ключевое слово. Настраиваемое — используйте &quot;Kiwi&quot; или задайте своё. Всегда слушает, остальное игнорирует."></span>
+                  <span data-en="Text-based fuzzy matching or ML detection via OpenWakeWord — a small ONNX model on raw audio with ~80ms latency and ~2% CPU. Train custom wake phrases via Google Colab." data-ru="Текстовый нечёткий поиск или ML-детекция через OpenWakeWord — маленькая ONNX-модель на сыром аудио с задержкой ~80мс и ~2% CPU. Тренировка кастомных фраз через Google Colab."></span>
                 </p>
               </div>
             </div>
@@ -299,7 +299,7 @@
               <span data-en="Neural Text-to-Speech" data-ru="Нейросетевой синтез речи"></span>
             </h3>
             <p class="text-slate-400 text-sm leading-relaxed">
-              <span data-en="Studio-quality speech synthesis with voice cloning from a 3-second sample. Supports Qwen3-TTS, ElevenLabs, and Piper." data-ru="Синтез речи студийного качества с клонированием голоса из 3-секундного образца. Qwen3-TTS, ElevenLabs и Piper."></span>
+              <span data-en="Studio-quality speech synthesis with voice cloning from a 3-second sample. Five providers: Qwen3-TTS, ElevenLabs, Kokoro ONNX, Piper, and RunPod." data-ru="Синтез речи студийного качества с клонированием голоса из 3-секундного образца. Пять провайдеров: Qwen3-TTS, ElevenLabs, Kokoro ONNX, Piper и RunPod."></span>
             </p>
           </article>
 
@@ -863,7 +863,17 @@
                 <td class="py-4 px-4 text-red-400">&#x274C;</td>
                 <td class="py-4 px-4 text-slate-400 text-xs" data-en="Lowest latency, no setup" data-ru="Минимальная задержка, без настройки"></td>
               </tr>
-              <!-- Row 4: Piper -->
+              <!-- Row 4: Kokoro ONNX -->
+              <tr class="border-b border-white/5">
+                <td class="py-4 px-4 text-slate-200 font-medium">Kokoro ONNX</td>
+                <td class="py-4 px-4 text-slate-300" data-en="High" data-ru="Высокое"></td>
+                <td class="py-4 px-4 text-slate-300">&lt;0.5s</td>
+                <td class="py-4 px-4 text-kiwi-400 font-medium" data-en="Free" data-ru="Бесплатно"></td>
+                <td class="py-4 px-4 text-slate-300" data-en="No" data-ru="Нет"></td>
+                <td class="py-4 px-4 text-red-400">&#x274C;</td>
+                <td class="py-4 px-4 text-slate-400 text-xs" data-en="Free, 14 voices, 24kHz, no GPU needed" data-ru="Бесплатно, 14 голосов, 24кГц, без GPU"></td>
+              </tr>
+              <!-- Row 5: Piper -->
               <tr>
                 <td class="py-4 px-4 text-slate-200 font-medium">Piper</td>
                 <td class="py-4 px-4 text-slate-300" data-en="Good" data-ru="Хорошее"></td>
@@ -925,7 +935,22 @@
             <p class="text-slate-500 text-xs mt-2" data-en="Lowest latency, no setup" data-ru="Минимальная задержка, без настройки"></p>
           </div>
 
-          <!-- Card 4: Piper -->
+          <!-- Card 4: Kokoro ONNX -->
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-semibold text-slate-200">Kokoro ONNX</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2 text-sm">
+              <div><span class="text-slate-500" data-en="Quality: " data-ru="Качество: "></span><span class="text-slate-300" data-en="High" data-ru="Высокое"></span></div>
+              <div><span class="text-slate-500" data-en="Latency: " data-ru="Задержка: "></span><span class="text-slate-300">&lt;0.5s</span></div>
+              <div><span class="text-slate-500" data-en="Cost: " data-ru="Стоимость: "></span><span class="text-kiwi-400" data-en="Free" data-ru="Бесплатно"></span></div>
+              <div><span class="text-slate-500">GPU: </span><span class="text-slate-300" data-en="No" data-ru="Нет"></span></div>
+              <div class="col-span-2"><span class="text-slate-500" data-en="Cloning: " data-ru="Клонирование: "></span><span class="text-red-400">&#x274C;</span></div>
+            </div>
+            <p class="text-slate-500 text-xs mt-2" data-en="Free, 14 voices, 24kHz, no GPU needed" data-ru="Бесплатно, 14 голосов, 24кГц, без GPU"></p>
+          </div>
+
+          <!-- Card 5: Piper -->
           <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
             <div class="flex items-center justify-between mb-3">
               <span class="font-semibold text-slate-200">Piper</span>
@@ -1756,6 +1781,18 @@ pip install -r requirements.txt</code></pre>
                 <i class="fa-solid fa-check text-kiwi-500/70 text-[10px]"></i>
                 <span data-en="Home Assistant integration" data-ru="Интеграция с Home Assistant"></span>
               </span>
+              <span class="inline-flex items-center gap-1.5 text-xs sm:text-sm text-slate-400 bg-white/5 border border-white/10 rounded-lg px-3 py-1.5">
+                <i class="fa-solid fa-check text-kiwi-500/70 text-[10px]"></i>
+                <span data-en="OpenWakeWord ML detection" data-ru="ML-детекция OpenWakeWord"></span>
+              </span>
+              <span class="inline-flex items-center gap-1.5 text-xs sm:text-sm text-slate-400 bg-white/5 border border-white/10 rounded-lg px-3 py-1.5">
+                <i class="fa-solid fa-check text-kiwi-500/70 text-[10px]"></i>
+                <span data-en="Kokoro ONNX TTS (14 voices)" data-ru="Kokoro ONNX TTS (14 голосов)"></span>
+              </span>
+              <span class="inline-flex items-center gap-1.5 text-xs sm:text-sm text-slate-400 bg-white/5 border border-white/10 rounded-lg px-3 py-1.5">
+                <i class="fa-solid fa-check text-kiwi-500/70 text-[10px]"></i>
+                <span data-en="MLX Whisper (Apple Silicon)" data-ru="MLX Whisper (Apple Silicon)"></span>
+              </span>
             </div>
           </div>
 
@@ -1769,10 +1806,6 @@ pip install -r requirements.txt</code></pre>
             </div>
             <!-- Items as subtle list -->
             <div class="ml-10 sm:ml-12 space-y-2">
-              <div class="flex items-center gap-3 px-4 py-2.5 rounded-xl border border-white/5 bg-white/[0.02]">
-                <i class="fa-solid fa-circle text-slate-700 text-[5px] shrink-0"></i>
-                <span class="text-sm text-slate-500" data-en="Plugin system for custom wake words" data-ru="Плагинная система для ключевых слов"></span>
-              </div>
               <div class="flex items-center gap-3 px-4 py-2.5 rounded-xl border border-white/5 bg-white/[0.02]">
                 <i class="fa-solid fa-circle text-slate-700 text-[5px] shrink-0"></i>
                 <span class="text-sm text-slate-500" data-en="Conversation history in dashboard" data-ru="История разговоров в панели"></span>
@@ -1810,7 +1843,7 @@ pip install -r requirements.txt</code></pre>
             </button>
             <div class="faq-content">
               <div class="px-6 pb-4 text-sm text-slate-400 leading-relaxed">
-                <span data-en="No. Piper TTS runs on CPU with <100ms latency. A GPU (CUDA) is only needed for Qwen3-TTS voice cloning. ElevenLabs works via API — no local GPU required." data-ru="Нет. Piper TTS работает на CPU с задержкой <100мс. GPU (CUDA) нужна только для клонирования голоса через Qwen3-TTS. ElevenLabs работает через API — локальная GPU не нужна."></span>
+                <span data-en="No. Piper and Kokoro ONNX both run on CPU with <0.5s latency — no GPU needed at all. A GPU (CUDA) is only needed for Qwen3-TTS voice cloning. ElevenLabs works via API — no local GPU required." data-ru="Нет. Piper и Kokoro ONNX работают на CPU с задержкой <0.5с — GPU совсем не нужна. GPU (CUDA) нужна только для клонирования голоса через Qwen3-TTS. ElevenLabs работает через API — локальная GPU не нужна."></span>
               </div>
             </div>
           </div>
@@ -1836,7 +1869,7 @@ pip install -r requirements.txt</code></pre>
             </button>
             <div class="faq-content">
               <div class="px-6 pb-4 text-sm text-slate-400 leading-relaxed">
-                <span data-en="Yes. The wake word is configurable in config.yaml. You can set any word or phrase you like." data-ru="Да. Ключевое слово настраивается в config.yaml. Можно задать любое слово или фразу."></span>
+                <span data-en="Yes. For text-based detection, just change the keyword in config.yaml. For ML detection, switch to OpenWakeWord engine — it ships with built-in models (hey_jarvis, alexa, hey_mycroft) and you can train your own custom wake word via Google Colab." data-ru="Да. Для текстового обнаружения просто измените ключевое слово в config.yaml. Для ML-обнаружения переключитесь на движок OpenWakeWord — он включает встроенные модели (hey_jarvis, alexa, hey_mycroft), и вы можете обучить собственное ключевое слово через Google Colab."></span>
               </div>
             </div>
           </div>
@@ -1849,7 +1882,7 @@ pip install -r requirements.txt</code></pre>
             </button>
             <div class="faq-content">
               <div class="px-6 pb-4 text-sm text-slate-400 leading-relaxed">
-                <span data-en="It depends on your TTS provider. With Piper + local Whisper + local LLM, everything runs offline. ElevenLabs and RunPod require internet." data-ru="Зависит от провайдера TTS. С Piper + локальным Whisper + локальной LLM всё работает офлайн. ElevenLabs и RunPod требуют интернет."></span>
+                <span data-en="It depends on your TTS provider. With Piper or Kokoro ONNX + local Whisper + local LLM, everything runs fully offline. ElevenLabs and RunPod require internet." data-ru="Зависит от провайдера TTS. С Piper или Kokoro ONNX + локальным Whisper + локальной LLM всё работает полностью офлайн. ElevenLabs и RunPod требуют интернет."></span>
               </div>
             </div>
           </div>
