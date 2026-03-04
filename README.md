@@ -46,4 +46,4 @@ docker-compose.yml  Docker Compose config
 
 ## License
 
-[MIT](https://github.com/ekleziast/kiwi-voice/blob/main/LICENSE)
+[MIT](LICENSE)
