@@ -116,6 +116,9 @@
           <a href="#tts-comparison" class="nav-link text-sm font-medium">
             <span data-en="TTS Providers" data-ru="TTS провайдеры"></span>
           </a>
+          <a href="#stt-comparison" class="nav-link text-sm font-medium">
+            <span data-en="STT Engines" data-ru="STT движки"></span>
+          </a>
           <a href="#souls" class="nav-link text-sm font-medium">
             <span data-en="Souls" data-ru="Личности"></span>
           </a>
@@ -170,6 +173,9 @@
     </a>
     <a href="#tts-comparison" class="nav-link">
       <span data-en="TTS Providers" data-ru="TTS провайдеры"></span>
+    </a>
+    <a href="#stt-comparison" class="nav-link">
+      <span data-en="STT Engines" data-ru="STT движки"></span>
     </a>
     <a href="#souls" class="nav-link">
       <span data-en="Souls" data-ru="Личности"></span>
@@ -987,6 +993,143 @@
               <div class="col-span-2"><span class="text-slate-500" data-en="Cloning: " data-ru="Клонирование: "></span><span class="text-red-400">&#x274C;</span></div>
             </div>
             <p class="text-slate-500 text-xs mt-2" data-en="Free, fast, runs on anything" data-ru="Бесплатно, быстро, работает на чём угодно"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- STT COMPARISON SECTION -->
+    <!-- ============================================ -->
+    <section id="stt-comparison" class="relative py-16 sm:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-16 reveal">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+            <span data-en="STT Engines" data-ru="Движки STT"></span>
+          </h2>
+          <p class="text-slate-400 max-w-2xl mx-auto">
+            <span data-en="Choose between local and cloud speech recognition. Switch anytime in config." data-ru="Выбирайте между локальным и облачным распознаванием речи. Переключайтесь в любой момент."></span>
+          </p>
+        </div>
+
+        <!-- Table (desktop) -->
+        <div class="hidden md:block overflow-x-auto reveal">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-white/10">
+                <th class="text-left py-4 px-4 text-slate-400 font-medium">
+                  <span data-en="Engine" data-ru="Движок"></span>
+                </th>
+                <th class="text-left py-4 px-4 text-slate-400 font-medium">
+                  <span data-en="Quality" data-ru="Качество"></span>
+                </th>
+                <th class="text-left py-4 px-4 text-slate-400 font-medium">
+                  <span data-en="Latency" data-ru="Задержка"></span>
+                </th>
+                <th class="text-left py-4 px-4 text-slate-400 font-medium">
+                  <span data-en="Cost" data-ru="Стоимость"></span>
+                </th>
+                <th class="text-left py-4 px-4 text-slate-400 font-medium">
+                  <span data-en="Local" data-ru="Локально"></span>
+                </th>
+                <th class="text-left py-4 px-4 text-slate-400 font-medium">
+                  <span data-en="GPU Required" data-ru="Нужна GPU"></span>
+                </th>
+                <th class="text-left py-4 px-4 text-slate-400 font-medium">
+                  <span data-en="Best For" data-ru="Лучше всего для"></span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Row 1: Faster Whisper (recommended) -->
+              <tr class="border-b border-white/5 bg-kiwi-500/5">
+                <td class="py-4 px-4">
+                  <div class="flex items-center gap-2">
+                    <span class="text-slate-200 font-medium">Faster Whisper</span>
+                    <span class="text-[10px] px-1.5 py-0.5 bg-kiwi-500/20 text-kiwi-400 rounded font-medium" data-en="Default" data-ru="По умолчанию"></span>
+                  </div>
+                </td>
+                <td class="py-4 px-4 text-slate-300" data-en="Excellent" data-ru="Отличное"></td>
+                <td class="py-4 px-4 text-slate-300">~1-3s</td>
+                <td class="py-4 px-4 text-kiwi-400 font-medium" data-en="Free" data-ru="Бесплатно"></td>
+                <td class="py-4 px-4 text-kiwi-400">&#x2705;</td>
+                <td class="py-4 px-4 text-slate-300" data-en="Optional (CUDA)" data-ru="Опционально (CUDA)"></td>
+                <td class="py-4 px-4 text-slate-400 text-xs" data-en="Best overall — free, private, accurate" data-ru="Лучший в целом — бесплатный, приватный, точный"></td>
+              </tr>
+              <!-- Row 2: ElevenLabs (new) -->
+              <tr class="border-b border-white/5">
+                <td class="py-4 px-4">
+                  <div class="flex items-center gap-2">
+                    <span class="text-slate-200 font-medium">ElevenLabs</span>
+                    <span class="text-[10px] px-1.5 py-0.5 bg-blue-500/20 text-blue-400 rounded font-medium">New</span>
+                  </div>
+                </td>
+                <td class="py-4 px-4 text-slate-300" data-en="Excellent" data-ru="Отличное"></td>
+                <td class="py-4 px-4 text-slate-300">~0.3-0.5s</td>
+                <td class="py-4 px-4 text-slate-300">~$0.018/min</td>
+                <td class="py-4 px-4 text-red-400">&#x274C;</td>
+                <td class="py-4 px-4 text-slate-300" data-en="No" data-ru="Нет"></td>
+                <td class="py-4 px-4 text-slate-400 text-xs" data-en="Lowest latency, no GPU, cloud-based" data-ru="Минимальная задержка, без GPU, облачный"></td>
+              </tr>
+              <!-- Row 3: MLX Whisper -->
+              <tr>
+                <td class="py-4 px-4 text-slate-200 font-medium">MLX Whisper</td>
+                <td class="py-4 px-4 text-slate-300" data-en="Excellent" data-ru="Отличное"></td>
+                <td class="py-4 px-4 text-slate-300">~0.5-1s</td>
+                <td class="py-4 px-4 text-kiwi-400 font-medium" data-en="Free" data-ru="Бесплатно"></td>
+                <td class="py-4 px-4 text-kiwi-400">&#x2705;</td>
+                <td class="py-4 px-4 text-slate-300" data-en="Apple Silicon" data-ru="Apple Silicon"></td>
+                <td class="py-4 px-4 text-slate-400 text-xs" data-en="Mac users with M-series chips" data-ru="Для Mac с чипами M-серии"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Cards (mobile) -->
+        <div class="md:hidden space-y-4 reveal">
+          <!-- Card 1: Faster Whisper -->
+          <div class="bg-kiwi-500/5 border border-kiwi-500/20 rounded-2xl p-5">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-semibold text-slate-200">Faster Whisper</span>
+              <span class="text-[10px] px-1.5 py-0.5 bg-kiwi-500/20 text-kiwi-400 rounded font-medium" data-en="Default" data-ru="По умолчанию"></span>
+            </div>
+            <div class="grid grid-cols-2 gap-2 text-sm">
+              <div><span class="text-slate-500" data-en="Quality: " data-ru="Качество: "></span><span class="text-slate-300" data-en="Excellent" data-ru="Отличное"></span></div>
+              <div><span class="text-slate-500" data-en="Latency: " data-ru="Задержка: "></span><span class="text-slate-300">~1-3s</span></div>
+              <div><span class="text-slate-500" data-en="Cost: " data-ru="Стоимость: "></span><span class="text-kiwi-400" data-en="Free" data-ru="Бесплатно"></span></div>
+              <div><span class="text-slate-500">GPU: </span><span class="text-slate-300" data-en="Optional (CUDA)" data-ru="Опционально (CUDA)"></span></div>
+            </div>
+            <p class="text-slate-500 text-xs mt-2" data-en="Best overall — free, private, accurate" data-ru="Лучший в целом — бесплатный, приватный, точный"></p>
+          </div>
+
+          <!-- Card 2: ElevenLabs -->
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-semibold text-slate-200">ElevenLabs</span>
+              <span class="text-[10px] px-1.5 py-0.5 bg-blue-500/20 text-blue-400 rounded font-medium">New</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2 text-sm">
+              <div><span class="text-slate-500" data-en="Quality: " data-ru="Качество: "></span><span class="text-slate-300" data-en="Excellent" data-ru="Отличное"></span></div>
+              <div><span class="text-slate-500" data-en="Latency: " data-ru="Задержка: "></span><span class="text-slate-300">~0.3-0.5s</span></div>
+              <div><span class="text-slate-500" data-en="Cost: " data-ru="Стоимость: "></span><span class="text-slate-300">~$0.018/min</span></div>
+              <div><span class="text-slate-500">GPU: </span><span class="text-slate-300" data-en="No" data-ru="Нет"></span></div>
+            </div>
+            <p class="text-slate-500 text-xs mt-2" data-en="Lowest latency, no GPU, cloud-based" data-ru="Минимальная задержка, без GPU, облачный"></p>
+          </div>
+
+          <!-- Card 3: MLX Whisper -->
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-semibold text-slate-200">MLX Whisper</span>
+            </div>
+            <div class="grid grid-cols-2 gap-2 text-sm">
+              <div><span class="text-slate-500" data-en="Quality: " data-ru="Качество: "></span><span class="text-slate-300" data-en="Excellent" data-ru="Отличное"></span></div>
+              <div><span class="text-slate-500" data-en="Latency: " data-ru="Задержка: "></span><span class="text-slate-300">~0.5-1s</span></div>
+              <div><span class="text-slate-500" data-en="Cost: " data-ru="Стоимость: "></span><span class="text-kiwi-400" data-en="Free" data-ru="Бесплатно"></span></div>
+              <div><span class="text-slate-500">GPU: </span><span class="text-slate-300" data-en="Apple Silicon" data-ru="Apple Silicon"></span></div>
+            </div>
+            <p class="text-slate-500 text-xs mt-2" data-en="Mac users with M-series chips" data-ru="Для Mac с чипами M-серии"></p>
           </div>
         </div>
       </div>
